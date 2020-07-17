@@ -18,8 +18,8 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(
-  csp({
-    policies: {
+  csp.expressCspHeader({
+    directives: {
       'default-src': [csp.NONE],
       'img-src': [csp.SELF],
     },
