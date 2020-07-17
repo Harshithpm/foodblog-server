@@ -22,6 +22,7 @@ app.use('/posts', postsRouter);
 app.use(express.static('client/build'));
 
 app.get('/', (req, res) => {
+  res.header('Content-Security-Policy', 'img-src 'self'');
   res.header('Access-Control-Allow-Origin', '*');
   res.sendFile('/index.html');
 });
