@@ -9,6 +9,9 @@
     "client": "npm run start --prefix client",
     "dev": "concurrently --kill-others-on-fail \"npm run start\" \"npm run client\""
   },
+  "engines": {
+    "node": "12.11.1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
