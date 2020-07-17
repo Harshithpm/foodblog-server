@@ -13,16 +13,16 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 const app = express();
-
-app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use('/posts', postsRouter);
 
 app.use(express.static('client/build'));
 
 app.get('/', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
   res.sendFile('/index.html');
 });
 

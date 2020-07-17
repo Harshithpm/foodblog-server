@@ -4,6 +4,7 @@ const Post = require('../models/Post');
 const mongoose = require('mongoose');
 
 router.get('/', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
   Post.find()
     .exec()
     .then((docs) => {
@@ -19,6 +20,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'true');
   const post = new Post({
     _id: new mongoose.Types.ObjectId(),
     title: req.body.title,
@@ -39,6 +41,18 @@ router.post('/', (req, res) => {
         message: 'Failed to create post',
         err: err,
       });
+    });
+});
+
+router.delete('/:postId', (req, res) => {
+  Post.deleteOne({ _id: req.params.postId })
+    .then((doc) => {
+      console.log(doc);
+      res.status(200).json(doc);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json({ err: err });
     });
 });
 
