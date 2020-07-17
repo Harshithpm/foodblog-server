@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const csp = require('express-csp-header');
 const path = require('path');
 const mongoose = require('mongoose');
 const postsRouter = require('./routes/posts');
@@ -16,13 +17,20 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(
+  csp({
+    policies: {
+      'default-src': [csp.NONE],
+      'img-src': [csp.SELF],
+    },
+  })
+);
 
 app.use('/posts', postsRouter);
 
 app.use(express.static('client/build'));
 
 app.get('/', (req, res) => {
-  res.header('Content-Security-Policy', 'img-src 'self'');
   res.header('Access-Control-Allow-Origin', '*');
   res.sendFile('/index.html');
 });

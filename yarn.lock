@@ -334,6 +334,11 @@ crypto-random-string@^2.0.0:
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-2.0.0.tgz#ef2a7a966ec11083388369baa02ebead229b30d5"
   integrity sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==
 
+csp-header@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/csp-header/-/csp-header-2.1.1.tgz#ea10aa54dbab4301f2b962b13ad7383b83e191b3"
+  integrity sha512-JuUi95nVFMuVOcI/A10+8CwpWflq3TS/sgperD109BG0xg7pEY1x1E1Aqv0LIpIKHdgkCK0nIZqu1RVRRRoMJA==
+
 date-fns@^2.0.1:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.14.0.tgz#359a87a265bb34ef2e38f93ecf63ac453f9bc7ba"
@@ -472,6 +477,14 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+
+express-csp-header@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/express-csp-header/-/express-csp-header-4.0.0.tgz#117e2920d49ebdb6ae519addea161967ab28aba5"
+  integrity sha512-ksDlHZUHmZtNyULAuFqeX91q1bVNJk8z26cYRrKmPxkgeqEDrdI72uvI77/8ufxsnPLZ9gbgmt31fWVXD4d0pw==
+  dependencies:
+    csp-header "^2.1.1"
+    psl "^1.8.0"
 
 express@^4.17.1:
   version "4.17.1"
@@ -1130,6 +1143,11 @@ proxy-addr@~2.0.5:
   dependencies:
     forwarded "~0.1.2"
     ipaddr.js "1.9.1"
+
+psl@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/psl/-/psl-1.8.0.tgz#9326f8bcfb013adcc005fdff056acce020e51c24"
+  integrity sha512-RIdOzyoavK+hA18OGGWDqUTsCLhtA7IcZ/6NCs4fFJaHBDab+pDDmDIByWFRQJq2Cd7r1OoQxBGKOaztq+hjIQ==
 
 pstree.remy@^1.1.7:
   version "1.1.8"
